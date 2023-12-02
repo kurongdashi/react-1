@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const {name} = require('../package.json')
 
 module.exports = {
     entry: '/src/App.tsx',
@@ -11,6 +12,10 @@ module.exports = {
         filename: "js/[name][hash:6].js",
         // 本地BrowserRouter 配置将请求路径转发的 index.html
         publicPath: '/',
+        // qiankun子应用配置
+        library: `${name}-[name]`,
+        libraryTarget: 'umd',
+        chunkLoadingGlobal: `webpackJsonp_${name}`,
     },
     // 配置如何解析
     resolve: {
