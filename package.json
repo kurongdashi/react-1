@@ -1,15 +1,11 @@
 {
-  "name": "react-1",
+  "name": "react-app1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development webpack server --config ./scripts/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.prod.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kurongdashi/react-.git"
   },
   "author": "",
   "license": "ISC",
@@ -34,7 +30,7 @@
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "typescript": "^5.3.2",
-    "webpack": "^5.89.0"
+    "webpack": "5.73.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
