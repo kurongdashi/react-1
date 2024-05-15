@@ -7,11 +7,11 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 
 module.exports = {
   // entry: './src/index.tsx',
-  entry: './src/entry.js',
+  entry: './src/bootstrap.js',
   devtool: 'eval-source-map',
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'js/[name][hash:6].js',
+    filename: 'js/[name].[hash:6].js',
     publicPath: 'auto',
     clean: true,
     // 本地BrowserRouter 配置将请求路径转发的 index.html
@@ -39,6 +39,7 @@ module.exports = {
     }),
     new htmlWebpackPlugin({
       title: 'app1应用',
+      favicon: path.resolve(__dirname, '../src/react.svg'),
       template: path.resolve(__dirname, '../public/index.html'),
       chunks: ['main']
     }),
